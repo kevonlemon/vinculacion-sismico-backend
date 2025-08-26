@@ -1,4 +1,9 @@
 {
+  "name": "vinculacion-sismico-backend",
+  "version": "1.0.0",
+  "description": "Backend para la gestion de usuarios y autenticacion del sistema de vinculacion sismico",
+  "main": "server.js",
+  "type": "module",
   "dependencies": {
     "bcrypt": "^6.0.0",
     "cors": "^2.8.5",
