@@ -13,7 +13,7 @@ export class CustomError extends Error {
     this.code = code;
   }
 }
-
+//hola
 export const ErrorManager = (error, res) => {
   console.log(error);
   if (error instanceof CustomError) {
