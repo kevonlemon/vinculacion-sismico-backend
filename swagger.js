@@ -4,7 +4,7 @@ import swaggerUi from "swagger-ui-express";
 const swaggerDefinition = {
   openapi: "3.0.0",
   info: {
-    title: "API Documentación",
+    title: "API Documentación - Sistema de Vulnerabilidad Sísmica",
     version: "1.0.0",
   },
 };
