@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import authRouter from "./lib/routes/authRouter.js";
+import userRouter from "./lib/routes/userRouter.js";
 
 dotenv.config();
 const app = express();
@@ -19,3 +20,4 @@ app.get("/", (req, res) => {
 });
 
 app.use("/auth", authRouter);
+app.use("/users", userRouter);
