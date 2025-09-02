@@ -7,6 +7,15 @@ const swaggerDefinition = {
     title: "API Documentación - Sistema de Vulnerabilidad Sísmica",
     version: "1.0.0",
   },
+  components: {
+    securitySchemes: {
+      bearerAuth: {
+        type: 'http',
+        scheme: 'bearer',
+        bearerFormat: 'JWT',
+      },
+    },
+  },
 };
 
 const options = {
