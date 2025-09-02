@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import authRouter from "./lib/routes/authRouter.js";
 import userRouter from "./lib/routes/userRouter.js";
 import catalogueRouter from "./lib/routes/catalogueRouter.js";
+import { swaggerSpec, swaggerUiExpress } from "./swagger.js";
 
 dotenv.config();
 const app = express();
@@ -20,6 +21,11 @@ app.get("/", (req, res) => {
   res.send("Buenas :D");
 });
 
+app.use(
+  "/api-docs",
+  swaggerUiExpress.serve,
+  swaggerUiExpress.setup(swaggerSpec)
+);
 app.use("/auth", authRouter);
 app.use("/users", userRouter);
 app.use("/catalogues", catalogueRouter);
