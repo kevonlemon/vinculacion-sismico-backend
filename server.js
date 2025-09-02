@@ -3,6 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import authRouter from "./lib/routes/authRouter.js";
 import userRouter from "./lib/routes/userRouter.js";
+import catalogueRouter from "./lib/routes/catalogueRouter.js";
 
 dotenv.config();
 const app = express();
@@ -21,3 +22,4 @@ app.get("/", (req, res) => {
 
 app.use("/auth", authRouter);
 app.use("/users", userRouter);
+app.use("/catalogues", catalogueRouter);
