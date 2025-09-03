@@ -5,6 +5,7 @@ import authRouter from "./lib/routes/authRouter.js";
 import userRouter from "./lib/routes/userRouter.js";
 import catalogueRouter from "./lib/routes/catalogueRouter.js";
 import { swaggerSpec, swaggerUiExpress } from "./swagger.js";
+import buildingRouter from "./lib/routes/buildingRouter.js";
 
 dotenv.config();
 const app = express();
@@ -29,3 +30,4 @@ app.use(
 app.use("/auth", authRouter);
 app.use("/users", userRouter);
 app.use("/catalogues", catalogueRouter);
+app.use("/buildings", buildingRouter);
