@@ -41,4 +41,5 @@ export const ErrorManager = (error, res) => {
     },
   });
 };
+
 export const isEmptyObject = (obj) => Object.keys(obj).length === 0;
