@@ -30,4 +30,4 @@ app.use(
 app.use("/auth", authRouter);
 app.use("/users", userRouter);
 app.use("/catalogues", catalogueRouter);
-app.use("/buildings", buildingRouter);
+app.use("/building", buildingRouter);
