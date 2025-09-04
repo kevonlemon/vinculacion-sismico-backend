@@ -6,16 +6,30 @@ const swaggerDefinition = {
   info: {
     title: "API Documentación - Sistema de Vulnerabilidad Sísmica",
     version: "1.0.0",
+    description:
+      "API para el sistema de evaluación de vulnerabilidad sísmica de edificios",
   },
+  servers: [
+    {
+      url: "http://localhost:3000",
+      description: "Servidor de desarrollo",
+    },
+  ],
   components: {
     securitySchemes: {
       bearerAuth: {
-        type: 'http',
-        scheme: 'bearer',
-        bearerFormat: 'JWT',
+        type: "http",
+        scheme: "bearer",
+        bearerFormat: "JWT",
+        description: "Ingrese el token JWT en el formato: Bearer <token>",
       },
     },
   },
+  security: [
+    {
+      bearerAuth: [],
+    },
+  ],
 };
 
 const options = {

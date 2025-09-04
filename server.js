@@ -25,9 +25,13 @@ app.get("/", (req, res) => {
 app.use(
   "/api-docs",
   swaggerUiExpress.serve,
-  swaggerUiExpress.setup(swaggerSpec)
+  swaggerUiExpress.setup(swaggerSpec, {
+    swaggerOptions: {
+      persistAuthorization: true,
+    },
+  })
 );
 app.use("/auth", authRouter);
 app.use("/users", userRouter);
 app.use("/catalogues", catalogueRouter);
-app.use("/building", buildingRouter);
+app.use("/buildings", buildingRouter);
