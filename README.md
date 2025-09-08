@@ -32,7 +32,7 @@ lib/
 - Node.js (v16 o superior)
 - PostgreSQL
 - Cuenta de Firebase (para Storage)
-- npm o yarn
+- npm 
 
 ## Instalación
 
