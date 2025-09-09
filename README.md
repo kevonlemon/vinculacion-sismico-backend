@@ -102,17 +102,18 @@ Una vez que el servidor esté ejecutándose, puedes acceder a la documentación 
 http://localhost:3000/api-docs
 ```
 
-## Endpoints Principales
+## 🔐 Endpoints Principales
 
 ### Autenticación
 - `POST /auth/login` - Iniciar sesión
 - `POST /auth/register` - Registrar usuario
 
 ### Usuarios
-- `GET /users/inspectors` - Obtener inspectores
+- `GET /users` - Obtener todos los usuarios activos
+- `GET /users/byRole/:role` - Obtener usuarios por rol específico
 - `GET /users/:id` - Obtener usuario por ID
-- `PUT /users/:id` - Actualizar usuario
-- `PATCH /users/:id/role` - Actualizar rol (Solo admins)
+- `PUT /users/:id` - Actualizar usuario (datos personales y foto de perfil)
+- `PATCH /users/:id/role` - Actualizar rol de usuario (Solo administradores)
 
 ### Edificios
 - `GET /buildings` - Listar edificios
@@ -122,7 +123,7 @@ http://localhost:3000/api-docs
 ### Catálogos
 - `GET /catalogues` - Obtener catálogos del sistema
 
-## Autenticación
+## 🛡️ Autenticación
 
 El sistema utiliza JWT para autenticación. Para acceder a rutas protegidas:
 
@@ -130,9 +131,36 @@ El sistema utiliza JWT para autenticación. Para acceder a rutas protegidas:
 2. Incluye el token en el header: `Authorization: Bearer <token>`
 
 ### Roles de Usuario
-- **admin**: Acceso completo al sistema
+- **admin**: Acceso completo al sistema, puede gestionar roles de usuarios
 - **inspector**: Puede crear y gestionar inspecciones
 - **ayudante**: Acceso limitado de solo lectura
+
+### Detalles de Endpoints de Usuarios
+
+#### `GET /users/active`
+- **Descripción**: Obtiene todos los usuarios activos del sistema
+- **Permisos**: Requiere autenticación
+- **Respuesta**: Array de usuarios con toda su información
+
+#### `GET /users/byRole/:role` 
+- **Descripción**: Obtiene usuarios filtrados por rol específico (admin, inspector, ayudante)
+- **Permisos**: Requiere autenticación
+- **Parámetros**: `role` - Rol a filtrar
+- **Respuesta**: Array de usuarios activos con el rol especificado
+
+#### `PUT /users/:id`
+- **Descripción**: Actualiza información personal del usuario (nombre, email, teléfono, foto de perfil, contraseña)
+- **Permisos**: Requiere autenticación
+- **Características**: 
+  - Actualización parcial (solo los campos enviados)
+  - Requiere contraseña actual para cambiar contraseña
+  - Soporte para subida de foto de perfil
+  - Preserva datos existentes si se envían campos vacíos
+
+#### `PATCH /users/:id/role`
+- **Descripción**: Actualiza el rol de un usuario
+- **Permisos**: Solo administradores
+- **Características**: Cambio inmediato de permisos sin necesidad de re-login
 
 ## 📁 Estructura de Archivos
 
