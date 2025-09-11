@@ -30,7 +30,7 @@ lib/
 ## Prerrequisitos
 
 - Node.js (v16 o superior)
-- PostgreSQL
+- PostgreSQL(Supabase)
 - Cuenta de Firebase (para Storage)
 - npm 
 
@@ -38,7 +38,7 @@ lib/
 
 1. **Clona el repositorio:**
 ```bash
-git clone https://github.com/tuusuario/vinculacion-sismico-backend.git
+git clone [https://github.com/kevonlemon/vinculacion-sismico-backend.git]
 cd vinculacion-sismico-backend
 ```
 
@@ -74,12 +74,11 @@ PORT=3000
 ```
 
 4. **Configura Firebase:**
-- Coloca tu archivo de credenciales de Firebase en la carpeta raíz
+- Coloca las credenciales de Firebase en el archivo .env
 - Actualiza la configuración en `lib/firebase/firebase.js`
 
 5. **Configura la base de datos:**
-- Crea la base de datos PostgreSQL
-- Ejecuta las migraciones necesarias
+- Crea la base de datos PostgreSQL(Supabase)
 
 ## Ejecución
 
