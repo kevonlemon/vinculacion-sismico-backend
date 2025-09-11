@@ -22,6 +22,18 @@ app.get("/", (req, res) => {
   res.send("Buenas :D");
 });
 
+app.get("/health", (req, res) => {
+  res.json({ status: "ok" });
+});
+
+// Configurar keep-alive
+app.use((req, res, next) => {
+  res.setHeader('Connection', 'keep-alive');
+  res.setHeader('Keep-Alive', 'timeout=5, max=100000');
+  next();
+}); 
+
+
 app.use(
   "/api-docs",
   swaggerUiExpress.serve,
