@@ -1,6 +1,7 @@
 # Vinculación Sísmico Backend
 
 API REST para el sistema de gestión de inspecciones sísmicas de edificios. Este backend proporciona servicios para la autenticación de usuarios, gestión de edificios, catálogos y administración de roles.
+<img width="1344" height="619" alt="image" src="https://github.com/user-attachments/assets/107a674e-670a-489c-8c2d-3b3332bf6a50" />
 
 ## Arquitectura
 
